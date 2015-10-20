@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+  </head>
+  <body>
+    
+    <div class="navigation-bar">
+      <form action="/home" method="post">
+        <input class="btn btn-large btn-primary pull-right" type="submit" value="Logout" name="logout">You are logged in as <%= user %></input>
+      </form>
+    </div>
+
+    <div class="container">
+      <div class="add text-center">
+        <form action="/home/new" method="get">
+          <input type="submit" class="btn btn-success btn-large" value="Add a new student"/>
+        </form>
+      </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Number</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% for(var i = 0; i < data.length; i++){ %>
+            <tr>
+              <td><%= i + 1 %></td>
+              <td><%= data[i].name %></td>
+              <td><%= data[i].number %></td>
+              <td>
+                <form action="/home" method="post">
+                  <input class="form-control input-lg" type="submit" value="view" name=<%= [(i+1), data[i].name, data[i].number] %>></input>
+                </form>
+              </td>
+            </tr>
+          <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></script>
+  </body>
+</html>

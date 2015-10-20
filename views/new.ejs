@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/new.css' />
+  </head>
+  <body>
+    
+    <div class="navigation-bar">
+      <form action="/home" method="post">
+        <input class="btn btn-large btn-primary pull-right" type="submit" value="Logout" name="logout">You are logged in as <%= user %></input>
+      </form>
+    </div>
+
+     <div class="container sign-in-up">
+      <div class="row">
+        <div class="form-title">New Student</div>
+        <div class="col-md-4 col-md-offset-4">
+          <% if(errors.length > 0){ %>
+            <% for (var i = 0; i < errors.length; i++){ %>
+              <p><%= errors[i] %></p>
+            <% } %>
+          <% } %>
+          <div class="text-center">
+            <form action="/home/new" method="post">
+              <div class="form-group">
+                <div class="right-inner-addon">
+                  <i class="fa fa-envelope"></i>
+                  <input class="form-control input-lg" placeholder="Student Name" type="text" name="name" <% if(body.name){ %>
+                    value=<%= body.name %>
+                  <% } %>
+                  >
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="right-inner-addon">
+                  <i class="fa fa-key"></i>
+                  <input class="form-control input-lg" placeholder="333-333-3333" type="text" name="number" <% if(body.number){ %>
+                    value=<%= body.number %>
+                  <% } %>
+                  >
+                </div>
+              </div>
+              <input class="btn btn-large btn-primary" type="submit" value="Add Student">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></script>
+  </body>
+</html>

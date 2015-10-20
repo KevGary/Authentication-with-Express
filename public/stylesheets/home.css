@@ -1,0 +1,45 @@
+body {
+  background-color: #D3D3D3;
+  height: 100%;
+}
+
+.navigation-bar {
+  background-color: black;
+  padding: 18px;
+  padding-bottom: 36px;
+}
+
+.logout {
+  background-color: #D3D3D3;
+  width: 100%;
+  margin-right:90%; 
+}
+
+.container {
+  background-color: white;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  overflow:hidden;
+  z-index:-1;
+  padding: 30%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #888888;  
+  margin-top: 92px;
+  margin-bottom: 16px;
+}
+
+.add {
+  margin-top: -80%;
+}
+
+.table {
+  margin-top: 75px;
+  border: 1px solid black;
+}
+
+.btn{
+  margin-left: 5px;
+}

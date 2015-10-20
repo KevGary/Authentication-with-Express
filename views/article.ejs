@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+  </head>
+  <body>
+    
+    <div class="navigation-bar">
+      <form action="/article/:id" method="post">
+        <input class="btn btn-large btn-primary pull-right text-center" type="submit" value="Home" name="home"></input>
+      </form>
+
+      <form action="/article/:id" method="post">
+        <input class="btn btn-large btn-primary pull-right text-center" type="submit" value="Logout" name="logout">You are logged in as <%= user %></input>
+      </form>
+    </div>
+
+
+    <div class="container">
+      <div class="add text-center">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= data.split(',')[0] %></td>
+                <td><%= data.split(',')[1] %></td>
+                <td><%= data.split(',')[2] %></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></script>
+  </body>
+</html>
