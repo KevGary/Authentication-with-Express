@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var db = require('monk')('localhost/users');
+var db = require('monk')(process.env.MONGOLAB_URI || 'localhost/users');
 var Users = db.get('users');
 var bcrypt = require('bcrypt');
 
